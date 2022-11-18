@@ -18,24 +18,24 @@
       <div class="row">
 
         <div class="col-lg">
-          <img src="<?= base_url('assets/img/panel1.png') ?>" alt="GITAR" class="float-left" />
-          <h4>Gitar</h4>
-          <p>Lorem ipsum dolor sit amet.</p>
+          <img src="<?= base_url('assets/img/panel1.png') ?>" alt="GUITAR" class="float-left" />
+          <h4>Guitar</h4>
+          <p>The most popular musical instrument in the world.</p>
         </div>
         <div class="col-lg">
           <img src="<?= base_url('assets/img/panel2.png') ?>" alt="BASS" class="float-left" />
           <h4>Bass</h4>
-          <p>Lorem ipsum dolor sit amet.</p>
+          <p>is a low frequency musical instrument.</p>
         </div>
         <div class="col-lg">
           <img src="<?= base_url('assets/img/panel3.png') ?>" alt="AMPLI" class="float-left" />
-          <h4>Ampli</h4>
-          <p>Lorem ipsum dolor sit amet.</p>
+          <h4>Amplifier</h4>
+          <p>a series of electronic components to amplify power</p>
         </div>
         <div class="col-lg">
           <img src="<?= base_url('assets/img/panel4.png') ?>" alt="DRUM" class="float-left" />
           <h4>Drum</h4>
-          <p>Lorem ipsum dolor sit amet.</p>
+          <p>has the function of giving the tempo in a song</p>
         </div>
 
       </div>
