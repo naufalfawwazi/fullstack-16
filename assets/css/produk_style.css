@@ -154,14 +154,6 @@ section {
     display: block;
 }
 
-.menu .box-container .box:hover {
-    background: #fff;
-}
-
-.menu .box-container .box:hover>* {
-    color: var(--black);
-}
-
 .footer {
     margin-top: 100px;
 }
