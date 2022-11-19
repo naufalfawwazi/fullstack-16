@@ -19,20 +19,15 @@
           <i class="fa-solid fa-left-long fa-xl"></i>
         </a>
       </div>
+       <!-- show error caution when email or password wrong -->
+      <?php if ($this->session->flashdata('error')) : ?>
+        <div class="alert alert-danger" role="alert">
+          <?= $this->session->flashdata('error') ?>
+        </div>
+      <?php endif; ?>
       <form action="" method="POST">
         <div class="form">
           <h2>Register</h2>
-          
-          <?php if(validation_errors()) : ?>
-
-            <?php
-              echo '<script language="javascript">';
-              echo 'alert("Konfirmasi password tidak sama");';
-              echo '</script>';
-            ?>
-
-          <?php endif; ?>
-          
           <div class="inputBox">
             <input type="text" name="nama" required />
             <span>Full Name</span> <i></i>

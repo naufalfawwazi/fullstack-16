@@ -13,25 +13,20 @@
     <title>Halaman Login</title>
   </head>
   <body>
+      </div>
     <div class="box login">
       <div class="back">
         <a href="<?= base_url() ?>">
           <i class="fa-solid fa-left-long fa-xl"></i>
         </a>
       </div>
-      
-      <form method="post" action="">
-
-        <?php if(!empty($this->session->flashdata('info'))) : ?>
-
-          <?php
-            echo '<script language="javascript">';
-            echo 'alert("Maaf email dan password salah!");';
-            echo '</script>';
-          ?>
-
-        <?php endif; ?>
-
+      <!-- show error caution when email or password wrong -->
+      <?php if ($this->session->flashdata('error')) : ?>
+        <div class="alert alert-danger" role="alert">
+          <?= $this->session->flashdata('error') ?>
+        </div>
+      <?php endif; ?>
+      <form method="post" action="">   
         <div class="form">
           <h2>Sign In</h2>
           <div class="inputBox">
