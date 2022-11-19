@@ -25,7 +25,7 @@
         </a>
       </div>
       
-      <form method="post" action="">
+      <form method="post" action="login">
       
         <div class="form">
           <h2>Sign In</h2>

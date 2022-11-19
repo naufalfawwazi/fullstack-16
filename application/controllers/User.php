@@ -41,6 +41,16 @@ class User extends CI_Controller {
         }
     }
 
+    public function login_view(){
+        $this->load->view('login/index');
+    }
+
+    public function register_view(){
+        $this->load->view('register/index');
+    }
+
+
+
    
 
     public function login()
@@ -54,13 +64,8 @@ class User extends CI_Controller {
             $this->form_validation->set_rules('password', 'Password', 'required');
            
             if($this->form_validation->run() == FALSE) {
-                if(!empty($this->session->flashdata('error'))) {
-                    $this->session->unset_userdata('error');
-                }
-                else{
-                    $this->session->set_flashdata('error', 'Email atau Password salah');
-                }
-                $this->load->view('login/index');
+                $this->session->set_flashdata('error', 'Email atau Password salah');
+                redirect('user/login_view');
             } else {
                 $this->session->unset_userdata('error');
                 $email = $this->input->post('email');
@@ -81,13 +86,8 @@ class User extends CI_Controller {
             $this->form_validation->set_rules('password', 'Password', 'required');
             $this->form_validation->set_rules('nama', 'Nama', 'required');
             if($this->form_validation->run() == FALSE) {
-                if(!empty($this->session->flashdata('error'))) {
-                    $this->session->unset_userdata('error');
-                }
-                else{
-                    $this->session->set_flashdata('error', 'Email sudah terdaftar');
-                }
-                $this->load->view('register/index');
+                $this->session->set_flashdata('error', 'Email sudah terdaftar');
+                redirect('user/register_view');
             } else {
                 $this->session->unset_userdata('error');
                 $email = $this->input->post('email');

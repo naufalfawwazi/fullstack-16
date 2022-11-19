@@ -33,7 +33,7 @@
         </a>
       </div>
       
-      <form action="" method="POST">
+      <form action="register" method="POST">
         <div class="form">
           <h2>Register</h2>
           <?php if ($this->session->flashdata('error')) : ?>
