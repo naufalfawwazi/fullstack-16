@@ -1,6 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=, initial-scale=1.0" />
+    <link rel="stylesheet" href="<?= base_url('assets/css/join_style.css') ?>" />
+    <!-- font awesome cdn link  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
+    <title>Halaman Login</title>
+
+
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=, initial-scale=1.0" />
@@ -19,15 +32,15 @@
           <i class="fa-solid fa-left-long fa-xl"></i>
         </a>
       </div>
-       <!-- show error caution when email or password wrong -->
-      <?php if ($this->session->flashdata('error')) : ?>
+      
+      <form action="" method="POST">
+        <div class="form">
+          <h2>Register</h2>
+          <?php if ($this->session->flashdata('error')) : ?>
         <div class="alert alert-danger" role="alert">
           <?= $this->session->flashdata('error') ?>
         </div>
       <?php endif; ?>
-      <form action="" method="POST">
-        <div class="form">
-          <h2>Register</h2>
           <div class="inputBox">
             <input type="text" name="nama" required />
             <span>Full Name</span> <i></i>

@@ -66,15 +66,21 @@ class User extends CI_Controller {
         if(!empty($id)) {
             redirect('home');
         } else {
+            $this->form_validation->set_rules('email', 'Email', 'required|is_unique[tbl_user.email_user]');
             $this->form_validation->set_rules('password', 'Password', 'required');
-            $this->form_validation->set_rules('confirm_password', 'Confirm Password', 'matches[password]');
+            $this->form_validation->set_rules('nama', 'Nama', 'required');
             if($this->form_validation->run() == FALSE) {
                 $this->load->view('register/index');
+                $this->session->set_flashdata('error', 'Email sudah terdaftar');
             } else {
-                $this->User_model->register();
+                $email = $this->input->post('email');
+                $password = $this->input->post('password');
+                $nama = $this->input->post('nama');
+                $this->User_model->register($email, $password, $nama);
             }
         }
     }
+    
 
     public function checkout()
     {
