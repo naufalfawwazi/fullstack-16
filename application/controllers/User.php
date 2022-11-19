@@ -44,7 +44,7 @@ class User extends CI_Controller {
     public function login_view(){
         $id = $this->session->userdata('id');
         if(!empty($id)) {
-            redirect('user/index');
+            redirect('home');
         } 
         else{
             $this->load->view('login/index');
@@ -54,7 +54,7 @@ class User extends CI_Controller {
     public function register_view(){
         $id = $this->session->userdata('id');
         if(!empty($id)) {
-            redirect('user/index');
+            redirect('home');
         }
         else{
             $this->load->view('register/index');
