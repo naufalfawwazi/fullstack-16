@@ -42,11 +42,23 @@ class User extends CI_Controller {
     }
 
     public function login_view(){
-        $this->load->view('login/index');
+        $id = $this->session->userdata('id');
+        if(!empty($id)) {
+            redirect('user/index');
+        } 
+        else{
+            $this->load->view('login/index');
+        }
     }
 
     public function register_view(){
-        $this->load->view('register/index');
+        $id = $this->session->userdata('id');
+        if(!empty($id)) {
+            redirect('user/index');
+        }
+        else{
+            $this->load->view('register/index');
+        }
     }
 
 
