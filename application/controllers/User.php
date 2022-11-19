@@ -51,6 +51,7 @@ class User extends CI_Controller {
             $this->form_validation->set_rules('password', 'Password', 'required');
             if($this->form_validation->run() == FALSE) {
                 $this->load->view('login/index');
+                $this->session->set_flashdata('error', 'Email atau Password salah');
             } else {
                 $email = $this->input->post('email');
                 $password = $this->input->post('password');
