@@ -117,14 +117,14 @@
         </figure>
         <figure class="figure">
           <img
-            src="<?= base_url('assets/img/testi0.jpg') ?>"
+            src="<?= base_url('assets/img/testi5.jpg') ?>"
             class="figure-img img-fluid rounded-circle"
             alt="Testi 5"
           />
         </figure>
         <figure class="figure">
           <img
-            src="<?= base_url('assets/img/testi0.jpg') ?>"
+            src="<?= base_url('assets/img/testi6.jpg') ?>"
             class="figure-img img-fluid rounded-circle"
             alt="Testi 6"
           />
