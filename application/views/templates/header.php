@@ -53,7 +53,7 @@
             <a class="nav-item nav-link" href="<?= base_url('produk/amplifier') ?>">Amplifier</a>
             <a class="nav-item nav-link" href="<?= base_url('produk/drum') ?>">Drum</a>
             <?php if(!$is_login) : ?>
-              <a class="nav-item btn btn-primary tombol" href="<?= base_url('user/login') ?>">JOIN US</a>
+              <a class="nav-item btn btn-primary tombol" href="<?= base_url('user/login_view') ?>">JOIN US</a>
             <?php else : ?>
               <div class="ms-auto p-2">
                 <a nav-link href="<?= base_url('user/keranjang') ?>" style="text-decoration: none">

@@ -44,7 +44,7 @@
             <i></i>
           </div>
           <div class="links">
-            <a href="<?= base_url('user/register') ?>">Sign Up</a>
+            <a href="<?= base_url('user/register_view') ?>">Sign Up</a>
           </div>
 
           <input type="submit" value="Login" class="c" />
