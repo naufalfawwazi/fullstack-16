@@ -32,7 +32,7 @@
           <?php if ($this->session->flashdata('error')) : ?>
       <div class="alert alert-danger" role="alert">
         <?= $this->session->flashdata('error') ?>
-      </div>
+      </div>  
     <?php endif; ?>
           <div class="inputBox">
             <input type="email" name="email" required />

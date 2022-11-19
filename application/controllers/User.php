@@ -41,24 +41,35 @@ class User extends CI_Controller {
         }
     }
 
+   
+
     public function login()
     {
+       
         $id = $this->session->userdata('id');
         if(!empty($id)) {
             redirect('home');
         } else {
             $this->form_validation->set_rules('email', 'Email', 'required');
             $this->form_validation->set_rules('password', 'Password', 'required');
+           
             if($this->form_validation->run() == FALSE) {
+                if(!empty($this->session->flashdata('error'))) {
+                    $this->session->unset_userdata('error');
+                }
+                else{
+                    $this->session->set_flashdata('error', 'Email atau Password salah');
+                }
                 $this->load->view('login/index');
-                $this->session->set_flashdata('error', 'Email atau Password salah');
             } else {
+                $this->session->unset_userdata('error');
                 $email = $this->input->post('email');
                 $password = $this->input->post('password');
                 $this->User_model->login($email, $password);
             }
         }
     }
+
 
     public function register()
     {
@@ -70,9 +81,15 @@ class User extends CI_Controller {
             $this->form_validation->set_rules('password', 'Password', 'required');
             $this->form_validation->set_rules('nama', 'Nama', 'required');
             if($this->form_validation->run() == FALSE) {
+                if(!empty($this->session->flashdata('error'))) {
+                    $this->session->unset_userdata('error');
+                }
+                else{
+                    $this->session->set_flashdata('error', 'Email sudah terdaftar');
+                }
                 $this->load->view('register/index');
-                $this->session->set_flashdata('error', 'Email sudah terdaftar');
             } else {
+                $this->session->unset_userdata('error');
                 $email = $this->input->post('email');
                 $password = $this->input->post('password');
                 $nama = $this->input->post('nama');
