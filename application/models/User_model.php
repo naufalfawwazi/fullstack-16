@@ -73,6 +73,6 @@ class User_model extends CI_Model {
         $this->db->where('id_user', $iduser);
         $this->db->delete('tbl_keranjang');
         
-        redirect('user/keranjang');
+        redirect('user/checkout_done_view');    
     }
 }

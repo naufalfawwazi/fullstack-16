@@ -19,5 +19,15 @@
     </tbody>
     </table>
     <h1 style="margin-top: 100px; color: #fff">Total: Rp <?= number_format($sum) ?></h1>
-    <a href="<?= base_url('user/checkout') ?>?total=<?= $sum ?>" class="btn btn-block btn-primary">Checkout</a>
+    <!-- php if $sum== 0 -->
+    <?php
+    if($sum<=0){
+        echo '<p class="btn btn-block btn-secondary">Checkout</p>';
+    } else {
+        echo '<a href="'.base_url('user/checkout').'?total=<?= $sum ?>" class="btn btn-block btn-primary">Checkout</a>';
+    }
+    ?>
+    
+    ?>
+    <!-- <a href="<?= base_url('user/checkout') ?>?total=<?= $sum ?>" class="btn btn-block btn-primary">Checkout</a> -->
 </div>

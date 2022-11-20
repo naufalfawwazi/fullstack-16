@@ -110,6 +110,21 @@ class User extends CI_Controller {
         }
     }
     
+    public  function checkout_done_view(){
+        $id = $this->session->userdata('id');
+        if(empty($id)) {
+            $this->session->sess_destroy();
+            redirect('home');
+        } else {
+            $data['judul'] = 'Halaman Checkout';
+            $data['css'] = 'produk_style.css';
+            $data['is_login'] = TRUE;
+            $this->load->view('templates/header', $data);
+            $this->load->view('checkout_done/index');
+            $this->load->view('templates/footer');
+        }        
+    
+    }
 
     public function checkout()
     {
