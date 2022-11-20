@@ -1,5 +1,5 @@
 <div class="container mt-4">
-    <div class="card">
+    <div class="card bg-dark text-white">
     <div class="card-header">
         Info Akun
     </div>
