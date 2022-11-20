@@ -168,6 +168,13 @@ section {
     border-radius: 40px;
 }
 
+/* Cart */
+.cart {
+  max-width: 900px;
+}
+.checkout {
+  max-width: 600px;
+}
 @media (min-width: 992px) {
 
     .navbar-brand,
