@@ -22,7 +22,7 @@
     <!-- php if $sum== 0 -->
     <?php
     if($sum<=0){
-        echo '<p class="btn btn-block btn-secondary">Checkout</p>';
+        echo '<button class="btn btn-block btn-primary" disabled>Checkout</button>';
     } else {
         echo '<a href="'.base_url('user/checkout').'?total=<?= $sum ?>" class="btn btn-block btn-primary">Checkout</a>';
     }
