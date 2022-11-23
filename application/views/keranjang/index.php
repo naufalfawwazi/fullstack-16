@@ -19,9 +19,14 @@
     </tbody>
     </table>
     <h1 style="margin-top: 100px; color: #fff">Total: Rp <?= number_format($sum) ?></h1>
-    <button type="button" class="btn btn-block btn-primary" data-toggle="modal" data-target="#exampleModal">
-        Checkout
-    </button>
+    <?php if($sum == 0) : ?>
+      <button type="button" class="btn btn-block btn-primary" data-toggle="modal" data-target="#exampleModal" disabled>
+    <?php else : ?>
+      <button type="button" class="btn btn-block btn-primary" data-toggle="modal" data-target="#exampleModal">
+    <?php endif; ?>
+          Checkout
+      </button>
+
 </div>
 
 <!-- Modal -->
