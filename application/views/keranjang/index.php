@@ -5,6 +5,7 @@
         <th scope="col">Nama Produk</th>
         <th scope="col">Jumlah Produk</th>
         <th scope="col">Total Harga</th>
+        <th></th>
         </tr>
     </thead>
     <tbody>
@@ -13,6 +14,7 @@
             <td><?= $kr['nama_produk'] ?></td>
             <td><?= $kr['jumlah_produk'] ?></td>
             <td>Rp <?= number_format($kr['total_harga']) ?></td>
+            <td><a href="<?= base_url('user/deleteProductCart?idkeranjang=') ?><?= $kr['id_keranjang'] ?>" style="text-decoration: none;">❌</a></td>
             </tr>
             <?php $sum += $kr['total_harga']; ?>
         <?php endforeach; ?>
@@ -20,12 +22,20 @@
     </table>
     <h1 style="margin-top: 100px; color: #fff">Total: Rp <?= number_format($sum) ?></h1>
     <?php if($sum == 0) : ?>
+      <a href="<?= base_url('user/emptyCartUser') ?>" class="btn btn-block btn-danger" style="color: #c9c9c9; pointer-events: none; cursor: default;">
+          Kosongkan Keranjang
+      </a>
       <button type="button" class="btn btn-block btn-primary" data-toggle="modal" data-target="#exampleModal" disabled>
-    <?php else : ?>
-      <button type="button" class="btn btn-block btn-primary" data-toggle="modal" data-target="#exampleModal">
-    <?php endif; ?>
           Checkout
       </button>
+    <?php else : ?>
+      <a href="<?= base_url('user/emptyCartUser') ?>" class="btn btn-block btn-danger">
+          Kosongkan Keranjang
+      </a>
+      <button type="button" class="btn btn-block btn-primary" data-toggle="modal" data-target="#exampleModal">
+          Checkout
+      </button>
+    <?php endif; ?>
 
 </div>
 

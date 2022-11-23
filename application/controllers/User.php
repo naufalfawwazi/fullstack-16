@@ -61,10 +61,6 @@ class User extends CI_Controller {
         }
     }
 
-
-
-   
-
     public function login()
     {
        
@@ -110,7 +106,7 @@ class User extends CI_Controller {
         }
     }
     
-    public  function checkout_done_view(){
+    public function checkout_done_view(){
         $id = $this->session->userdata('id');
         if(empty($id)) {
             $this->session->sess_destroy();
@@ -124,6 +120,29 @@ class User extends CI_Controller {
             $this->load->view('templates/footer');
         }        
     
+    }
+
+    public function deleteProductCart()
+    {
+        $id = $this->session->userdata('id');
+        if(empty($id)) {
+            $this->session->sess_destroy();
+            redirect('home');
+        } else {
+            $idkeranjang = $this->input->get('idkeranjang');
+            $this->User_model->deleteProduct($idkeranjang);
+        }      
+    }
+
+    public function emptyCartUser()
+    {
+        $id = $this->session->userdata('id');
+        if(empty($id)) {
+            $this->session->sess_destroy();
+            redirect('home');
+        } else {
+            $this->User_model->emptyCart($idkeranjang);
+        }      
     }
 
     public function checkout()

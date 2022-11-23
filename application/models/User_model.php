@@ -47,6 +47,24 @@ class User_model extends CI_Model {
         }
     }
 
+    public function deleteProduct()
+    {
+        $idkeranjang = $this->input->get('idkeranjang');
+        $this->db->where('id_keranjang', $idkeranjang);
+        $this->db->delete('tbl_keranjang');
+
+        redirect('user/keranjang');    
+    }
+
+    public function emptyCart()
+    {        
+        $iduser = $this->session->userdata('id');
+        $this->db->where('id_user', $iduser);
+        $this->db->delete('tbl_keranjang');
+
+        redirect('user/keranjang');    
+    }
+
     public function getKeranjang($id)
     {
         $query = $this->db->where('id_user', $id)->get('tbl_keranjang');
