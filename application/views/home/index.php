@@ -86,7 +86,7 @@
         </figure>
         <figure class="figure">
           <img
-            src="<?= base_url('assets/img/testi1.jpeg') ?>"
+            src="<?= base_url('assets/img/testi1.jpg') ?>"
             class="figure-img img-fluid rounded-circle"
             alt="Testi 2"
           />
