@@ -114,7 +114,7 @@ class User extends CI_Controller {
     
     public function checkout_done_view(){
         $id = $this->session->userdata('id');
-        if(empty($id)) {
+        if(empty($id) or empty($this->session->flashdata('acces'))) {
             $this->session->sess_destroy();
             redirect('home');
         } else {

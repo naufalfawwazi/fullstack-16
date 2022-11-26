@@ -91,6 +91,8 @@ class User_model extends CI_Model {
         $this->db->where('id_user', $iduser);
         $this->db->delete('tbl_keranjang');
         
+        
+        $this->session->set_flashdata('acces', 1);
         redirect('user/checkout_done_view');    
     }
 }
