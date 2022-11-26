@@ -141,7 +141,7 @@ class User extends CI_Controller {
             $this->session->sess_destroy();
             redirect('home');
         } else {
-            $this->User_model->emptyCart($idkeranjang);
+            $this->User_model->emptyCart($id);
         }      
     }
 
