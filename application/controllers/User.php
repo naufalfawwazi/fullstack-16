@@ -93,10 +93,16 @@ class User extends CI_Controller {
             $this->form_validation->set_rules('email', 'Email', 'required|is_unique[tbl_user.email_user]');
             $this->form_validation->set_rules('password', 'Password', 'required');
             $this->form_validation->set_rules('nama', 'Nama', 'required');
-            if($this->form_validation->run() == FALSE) {
-                $this->session->set_flashdata('error', 'Email sudah terdaftar');
+            $password = $this->input->post('password');
+            $password2 = $this->input->post('confirm_password');
+            if($password != $password2) {
+                $this->session->set_flashdata('error', 'Password tidak sama');
                 redirect('user/register_view');
-            } else {
+            } 
+            else if($this->form_validation->run() == FALSE) {
+                $this->session->set_flashdata('error', 'Email sudah terdaftar');
+                redirect('user/register_view');}
+            else {
                 $this->session->unset_userdata('error');
                 $email = $this->input->post('email');
                 $password = $this->input->post('password');
