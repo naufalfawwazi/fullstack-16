@@ -28,7 +28,7 @@
   <body>
     <div class="box register">
       <div class="back">
-        <a href="<?= base_url('user/login') ?>">
+        <a href="<?= base_url('user/login_view') ?>">
           <i class="fa-solid fa-left-long fa-xl"></i>
         </a>
       </div>
